@@ -6,7 +6,7 @@ const cors = require("cors");
 const app = express();
 
 // Allow requests from the frontend's origin
-app.use(cors({ origin: "http://localhost:5173" })); // Replace 3000 with your frontend port
+app.use(cors({ origin: "http://localhost:3000" })); // Replace 3000 with your frontend port
 
 
 // Connect to MongoDB
