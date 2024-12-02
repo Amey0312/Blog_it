@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-const connectDB = require("./config/db");
+const connectDB = require("./backend/config/db");
 require("dotenv").config();
 const cors = require("cors");
 const app = express();
@@ -16,13 +16,13 @@ connectDB();
 app.use(express.json());
 
 // Routes
-const blogRoutes = require("./routes/blogRoutes");
+const blogRoutes = require("./backend/routes/blogRoutes");
 app.use("/api/blogs", blogRoutes);
 
-app.use(express.static(path.join(src, "/frontend/dist")));
+app.use(express.static(path.join(__dirname, "/frontend/dist")));
 
 	app.get("*", (req, res) => {
-		res.sendFile(path.resolve(src, "frontend/dist/index.html"));
+		res.sendFile(path.resolve(__dirname, "frontend/dist/index.html"));
 	});
 
 const PORT = process.env.PORT || 5000;
