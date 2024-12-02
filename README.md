@@ -1,2 +1,2 @@
-# Blog_it
-Just my personal blog
+# Personal-Blog
+This is my personal blog 
